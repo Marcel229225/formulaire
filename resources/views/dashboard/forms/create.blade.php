@@ -91,13 +91,11 @@
 
                                 <div class="container">
                                     <div class=" lieu ">
-                                        <input type="text " name="lieu " id="lieu " />
-                                        <label for="Date ">Le</label>
-                                        <input type="date " name="Date " id="Date " /><br><br>
+                                        <input type="string" name="lieu" id="lieu" />
                                         <div>
                                             <strong class="infirmerie ">INFIRMERIE:</strong>
                                             <strong class="chantier ">CHANTIER:</strong>
-                                            <input type="text " name="chantier" id="chantier" />
+                                            <input type="string" name="chantier" id="chantier" />
                                         </div>
                                     </div><br>
                                     <div class="fiche ">
@@ -117,12 +115,12 @@
                                         <div class="clinique ">
                                             <strong>Antécédents Familiaux</strong>
                                         </div>
-                                        <textarea name="antécédents_familiaux" id="antécédents_familiaux" cols="50 "
+                                        <textarea name="antecedent_familiux" id="antecedent_familiux" cols="50 "
                                             rows="2"></textarea>
                                         <div class="clinique ">
                                             <strong>Antécédents Professionnels</strong>
                                         </div>
-                                        <textarea name="antécédents_professionnels" id="antécédents_professionnels"
+                                        <textarea name="antecedent_professionnel" id="antecedent_professionnel"
                                             cols="50 " rows="2"></textarea>
                                     </div>
                                     <br>
@@ -172,10 +170,10 @@
                                                     <input type="text " name="albiminurie" id="albiminurie" /><br>
                                                     <label for="Sang ">- Sang :</label>
                                                     <input type="text " name="sang" id="sang " />
-                                                    <div class="clinique ">
+                                                    <div>
                                                         <strong>Autres</strong>
                                                     </div>
-                                                    <textarea name="autres" id="autres" cols="50 " rows="5"></textarea>
+                                                    <textarea name="autre" id="autre" cols="50 " rows="5"></textarea>
 
                                                 </li><br>
                                                 <li class="clinique ">
@@ -212,11 +210,6 @@
                                     class="btn btn-primary">Enregistrer</button>
                             </form>
                         </div>
-
-
-
-
-
 
                     </div>
                 </div>

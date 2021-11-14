@@ -78,7 +78,6 @@
                                             <th>INFIRMERIE:CHANTIER</th>
                                             <th>FICHE MEDICALE N°</th>
                                             <th>Date</th>
-                                            <th>Agent ayant créer</th>
                                             <th>Action</th>
                                         </thead>
                                         <tbody>
@@ -87,7 +86,6 @@
                                                     <th>{{ $medical->chantier }}</th>
                                                     <th>{{ $medical->numero }}</th>
                                                     <th>{{ $medical->created_at }}</th>
-                                                    <th>{{ !empty($medical->user['name']) ? $medical->user['name'] : '' }}</th>
                                                     <th>
                                                         <div class="btn-group">
                                                             {{-- <a href="{{ route('MedicalController.show', $big->id) }}"

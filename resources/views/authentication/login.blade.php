@@ -5,8 +5,7 @@
         <!-- /.login-logo -->
         <div class="card card-outline card-primary">
             <div class="card-header text-center">
-                <img src="{{ asset('adminlte/img/sbin_accueil.jpg') }}" alt="" width="120px;" height="60px"><br/>
-                <small><a href="{{ route('dashboard') }}" style="color:black;"><b>C</b>onquete</a></small>
+                <small><a href="{{ route('dashboard') }}" style="color:black;"><b>C</b>Medical</a></small>
             </div>
             <div class="card-body">
                 <p class="login-box-msg">Connectez-vous pour démmarer votre session</p>

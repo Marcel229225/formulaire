@@ -10,17 +10,17 @@ use Illuminate\Support\Facades\DB;
 
 class MedicalController extends Controller
 {
-     /**
+    /**
      * create a new instance of the class
      *
      * @return void
      */
     function __construct()
     {
-         $this->middleware('permission:form-list', ['only' => ['index']]);
-         $this->middleware('permission:form-create', ['only' => ['create', 'store']]);
-         $this->middleware('permission:form-edit', ['only' => ['edit', 'update']]);
-         $this->middleware('permission:form-show', ['only' => ['show', 'update']]);
+        $this->middleware('permission:form-list', ['only' => ['index']]);
+        $this->middleware('permission:form-create', ['only' => ['create', 'store']]);
+        $this->middleware('permission:form-edit', ['only' => ['edit', 'update']]);
+        $this->middleware('permission:form-show', ['only' => ['show', 'update']]);
     }
 
     /**
@@ -33,19 +33,19 @@ class MedicalController extends Controller
         $user = auth()->user()->roles->pluck('name');
         $user = $user[0];
 
-        if($user == 'agent') {
-            $medicals= Medical::all()->where('user_id', auth()->user()->id);
+        if ($user == 'agent') {
+            $medicals = Medical::all()->where('user_id', auth()->user()->id);
             return view('/dashboard/forms/index', compact('medicals'));
         }
 
         //Liste des formulaires pour le chef agence
-        if($user == 'chef agence') {
-            $medicals= Medical::all()->where('agence_id', auth()->user()->agence_id);
+        if ($user == 'chef agence') {
+            $medicals = Medical::all()->where('agence_id', auth()->user()->agence_id);
             return view('/dashboard/forms/index', compact('medicals'));
         }
 
-        if($user === "admin") {
-            $medicals= Medical::all();
+        if ($user === "admin") {
+            $medicals = Medical::all();
             return view('/dashboard/forms/index', compact('medicals'));
         }
     }
@@ -57,9 +57,9 @@ class MedicalController extends Controller
      */
     public function create()
     {
-        $users=User::pluck('name')->all();
+        $users = User::pluck('name')->all();
 
-        $Users =User::all();
+        $Users = User::all();
 
         return view('dashboard/forms/create', compact('Users'));
     }
@@ -90,10 +90,17 @@ class MedicalController extends Controller
             'examen_physique' => 'required',
             'glucoserie' => 'required',
             'albiminurie' => 'required',
-            'autres' => 'required',
+            'autre' => 'required',
             'sang' => 'required',
             'conduite_a_tenir' => 'required',
             'aptitude' => 'required',
+            'lieu' => 'required',
+            'antecedent_familiux' => 'required',
+            'antecedent_professionnel' => 'required',
+            'audiometrie' => 'required',
+            'spirometrie' => 'required',
+            'electrocardiogramme' => 'required',
+            'ordonnance' => 'required',
         ]);
         $input = $request->all();
         $medical = Medical::create($input);
@@ -130,7 +137,7 @@ class MedicalController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Medical $big, Request $request, $id)
+    public function update(Request $request, $id)
     {
         $this->validate($request, [
             'chantier' => 'required',
@@ -150,10 +157,17 @@ class MedicalController extends Controller
             'examen_physique' => 'required',
             'glucoserie' => 'required',
             'albiminurie' => 'required',
-            'autres' => 'required',
+            'autre' => 'required',
             'sang' => 'required',
             'conduite_a_tenir' => 'required',
             'aptitude' => 'required',
+            'lieu' => 'required',
+            'antecedent_familiux' => 'required',
+            'antecedent_professionnel' => 'required',
+            'audiometrie' => 'required',
+            'spirometrie' => 'required',
+            'electrocardiogramme' => 'required',
+            'ordonnance' => 'required',
         ]);
         $input = $request->all();
 

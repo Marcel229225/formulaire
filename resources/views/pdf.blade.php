@@ -50,7 +50,7 @@
 <body>
     <div class="container">
         <div class=" lieu ">
-            <label for="Date " style="text-align: right;">Le</strong> {{ $boss[0]->created_at }}<br><br>
+            <label for="Date " style="text-align: right;">{{ $boss[0]->lieu }} <strong>Le</strong> {{ $boss[0]->created_at }}<br><br>
             <div>
                 <strong class="infirmerie ">INFIRMERIE:</strong>
                 <strong class="chantier " style="text-decoration: underline;">CHANTIER:</strong> {{ $boss[0]->chantier }}
@@ -75,13 +75,13 @@
             <div class="clinique ">
                 <strong style="text-decoration: underline;">Antécédents Familiaux</strong>
             </div>
-            <textarea name="antécédents_familiaux" id="antécédents_familiaux" cols="50 "
-                rows="2"></textarea>
+            <textarea name="antecedents_familiaux" id="antecedents_familiaux" cols="50 "
+                rows="2">{{ $boss[0]->antecedent_familiux }}</textarea>
             <div class="clinique ">
                 <strong style="text-decoration: underline;">Antécédents Professionnels</strong>
             </div>
-            <textarea name="antécédents_professionnels" id="antécédents_professionnels"
-                cols="50 " rows="2"></textarea>
+            <textarea name="antecedents_professionnels" id="antecedents_professionnels"
+                cols="50 " rows="2">{{ $boss[0]->antecedent_professionnel }}</textarea>
         </div>
         <br />
         <br />
@@ -124,21 +124,23 @@
                         <input type="text " name="Albuminurie " id="Albuminurie " /><br>
                         <strong style="text-decoration: underline;">- Sang :</strong> {{ $boss[0]->sang }}
                         <input type="text " name="Sang " id="Sang " />
+                        <div>
+                            <strong>Autres</strong>
+                        </div>
+                        <textarea name="autre" id="autre" cols="50 " rows="5">{{ $boss[0]->autre }}</textarea>
                     </li>
-                    <strong style="text-decoration: underline;">- Autres :</strong> {{ $boss[0]->autres }}
-                        <textarea name="autres" id="autres" cols="50 " rows="5">{{ $boss[0]->autres }}</textarea><br>
                     <li class="clinique ">
                         <strong style="text-decoration: underline;">Electrocardiogramme :</strong>
                     </li>
-                    <textarea name="electrocardiogramme" id="electrocardiogramme" cols="50 " rows="2 "></textarea>
+                    <textarea name="electrocardiogramme" id="electrocardiogramme" cols="50 " rows="2 ">{{ $boss[0]->electrocardiogramme }}</textarea>
                     <li class="clinique ">
                         <strong style="text-decoration: underline;">Audiométrie :</strong>
                     </li>
-                    <textarea name="audiometrie" id="audiometrie" cols="50 " rows="2 "></textarea>
+                    <textarea name="audiometrie" id="audiometrie" cols="50 " rows="2 ">{{ $boss[0]->audiometrie }}</textarea>
                     <li class="clinique ">
                         <strong style="text-decoration: underline;">Spirométrie :</strong>
                     </li>
-                    <textarea name="spirometrie" id="spirometrie" cols="50 " rows="2 "></textarea>
+                    <textarea name="spirometrie" id="spirometrie" cols="50 " rows="2 ">{{ $boss[0]->spirometrie }}</textarea>
                 </ul>
             </div>
             <br>
@@ -148,7 +150,7 @@
 
         <br />
         <div class="clinique " style="text-decoration: underline;" ><strong> Ordonnance médicale :</strong>  </div>
-            <textarea name="ordonnance" id="ordonnance" cols="50 " rows="2"></textarea>
+            <textarea name="ordonnance" id="ordonnance" cols="50 " rows="2">{{ $boss[0]->ordonnance }}</textarea>
 
         <br />
 
@@ -156,6 +158,9 @@
         <div class="clinique " style="text-decoration: underline;"><strong>IV- Aptitude</strong>  </div>
                <textarea name="aptitude" id="aptitude" cols="50" rows="2">{{ $boss[0]->aptitude }}</textarea>
     </div>
+
+    <div class=" lieu "><strong class="infirmerie ">Signature et cachet du medecin</strong></div>
+</div>
 </body>
 
 </html>

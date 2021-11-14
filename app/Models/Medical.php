@@ -26,9 +26,16 @@ class Medical extends Model
         'examen_physique',
         'glucoserie',
         'albiminurie',
-        'autres',
+        'autre',
         'sang',
         'conduite_a_tenir',
         'aptitude',
+        'lieu',
+        'antecedent_familiux',
+        'antecedent_professionnel',
+        'audiometrie',
+        'spirometrie',
+        'electrocardiogramme',
+        'ordonnance',
     ];
 }

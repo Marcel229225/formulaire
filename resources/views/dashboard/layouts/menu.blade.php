@@ -45,7 +45,7 @@
             </ul>
         </li>
 
-        @can('user-list')
+        {{-- @can('user-list')
         <li class="nav-item">
           <a href="{{ route('users.index') }}" class="nav-link">
             <i class="nav-icon fas fa-users"></i>
@@ -70,7 +70,7 @@
             <p>Agences</p>
           </a>
         </li>
-        @endcan
+        @endcan --}}
 
       </ul>
     </nav>

@@ -57,7 +57,7 @@
                 <div class="container-fluid">
                     <div class="row mb-2">
                         <div class="col-sm-6">
-                            <h1>Ajouter un formulaire</h1>
+                            <h1>Modifier un formulaire</h1>
                         </div>
                     </div>
                 </div><!-- /.container-fluid -->
@@ -90,16 +90,13 @@
                                 <input type="hidden" name="agence_id" value="{{ auth()->user()->agence_id }} " />
 
                                 <div class="container">
-                                    <img src="{{ asset('adminlte/img/medical.jpg') }}" alt="" width="10%;">
-                                    <br />
                                     <div class=" lieu ">
-                                        <input type="text " name="lieu " id="lieu " />
-                                        <label for="Date ">Le</label>
-                                        <input type="date " name="Date " id="Date " /><br><br>
+                                        <strong class="infirmerie ">Lieu</strong>
+                                        <input type="string" name="lieu" id="lieu" value="{{$medical->lieu}}" />
                                         <div>
                                             <strong class="infirmerie ">INFIRMERIE:</strong>
                                             <strong class="chantier ">CHANTIER:</strong>
-                                            <input type="text " name="chantier" id="chantier" value="{{$medical->chantier}}"/>
+                                            <input type="string" name="chantier" id="chantier" value="{{$medical->chantier}}"/>
                                         </div>
                                     </div><br>
                                     <div class="fiche ">
@@ -115,19 +112,17 @@
                                         <input type="number " name="age" id="age" value="{{$medical->age}}"/>
 
                                         <label for="poste ">Poste de travail:</label>
-                                        <input type="text " name="poste_de_travail" id="poste_de_travail" value="{{$medical->poste_de_travail}}"/>
-                                    </div>
-                                    <div>
+                                        <input type="text " name="poste_de_travail" id="poste_de_travail" value="{{$medical->poste_de_travail}}"/> <br />
                                         <div class="clinique ">
                                             <strong>Antécédents Familiaux</strong>
                                         </div>
-                                        <textarea name="antécédents_familiaux" id="antécédents_familiaux" cols="50 "
-                                            rows="2"></textarea>
+                                        <textarea name="antecedent_familiux" id="antecedent_familiux"   cols="50 "
+                                            rows="2">{{$medical->antecedent_familiux}}</textarea>
                                         <div class="clinique ">
                                             <strong>Antécédents Professionnels</strong>
                                         </div>
-                                        <textarea name="antécédents_professionnels" id="antécédents_professionnels"
-                                            cols="50 " rows="2"></textarea>
+                                        <textarea name="antecedent_professionnel" id="antecedent_professionnel"
+                                            cols="50 " rows="2">{{$medical->antecedent_professionnel}}</textarea>
                                     </div>
                                     <br>
                                     <div>
@@ -135,36 +130,36 @@
                                         <div class="clinique ">
                                             <strong>Plaintes</strong>
                                         </div>
-                                        <textarea name="Plaintes" id="Plaintes" cols="50 " rows="2 " value="{{$medical->Plaintes}}"></textarea>
+                                        <textarea name="Plaintes" id="Plaintes" value="" cols="50 "  rows="2 ">{{$medical->Plaintes}}</textarea>
                                         <div class="mensuration "><strong>Mensurations:</strong></div><br><br>
                                         <div class="tab ">
                                             <label for="poids ">Poids</label>
-                                            <input type="number " name="poids" id="poids" placeholder="..............kg " value="{{$medical->poids}}"/>
+                                            <input type="number " name="poids" id="poids" value="{{$medical->poids}}" placeholder="..............kg " />
                                             <label for="taille ">Taille:</label>
-                                            <input type="number " name="taille" id="taille "
-                                                placeholder="..............m " value="{{$medical->taille}}"/>
+                                            <input type="number " name="taille" id="taille " value="{{$medical->taille}}"
+                                                placeholder="..............m " />
                                             <label for="TA ">TA:</label>
-                                            <input type="text " name="ta" id="ta"
-                                                placeholder="......../......mmHg " value="{{$medical->ta}}"/><br><br>
+                                            <input type="text " name="ta" id="ta" value="{{$medical->ta}}"
+                                                placeholder="......../......mmHg " /><br><br>
 
                                             <label for="PT ">PT</label>
                                             <input type="number " name="pt" id="pt" placeholder="..............cm " value="{{$medical->pt}}"/>
                                             <label for="PA ">PA</label>
-                                            <input type="number " name="pa" id="pa" placeholder="..............cm " value="{{$medical->pa}}"/>
+                                            <input type="number " name="pa" id="pa" placeholder="..............cm "  value="{{$medical->pa}}"/>
                                             <label for="pouls ">Pouls</label>
-                                            <input type="number " name="pouls" id="pouls"
-                                                placeholder="..............pls/mn " value="{{$medical->pouls}}"/><br><br>
+                                            <input type="number " name="pouls" id="pouls" value="{{$medical->pouls}}"
+                                                placeholder="..............pls/mn " /><br><br>
 
                                             <label for="AV ">AV : OD :</label>
-                                            <input type="number " name="av_od" id="av_od"
-                                                placeholder="............../10 " value="{{$medical->av_od}}"/>
+                                            <input type="number " name="av_od" id="av_od" value="{{$medical->av_od}}"
+                                                placeholder="............../10 " />
                                             <label for="OG ">OG :</label>
-                                            <input type="number " name="og" id="og"
-                                                placeholder="............../10 " value="{{$medical->og}}"/><br><br>
+                                            <input type="number " name="og" id="og" value="{{$medical->og}}"
+                                                placeholder="............../10 " /><br><br>
                                         </div>
                                         <div class="clinique "><strong>Examen Physiques</strong></div><br>
-                                        <textarea name="examen_physique" id="examen_physique" cols="50 "
-                                            rows="2" value="{{$medical->examen_physique}}"></textarea><br><br>
+                                        <textarea name="examen_physique" id="examen_physique"  value="" cols="50 "
+                                            rows="2">{{$medical->examen_physique}}</textarea><br><br>
 
                                         <div class="clinique "><strong>II- Examens complémentaires</strong> </div><br>
                                         <div class="tab2 ">
@@ -175,40 +170,40 @@
                                                     <label for="Albuminurie ">- Albuminurie :</label>
                                                     <input type="text " name="albiminurie" id="albiminurie" value="{{$medical->albiminurie}}"/><br>
                                                     <label for="Sang ">- Sang :</label>
-                                                    <input type="text " name="sang" id="sang" value="{{$medical->sang}}"/>
-                                                    <div class="clinique ">
+                                                    <input type="text " name="sang" id="sang " value="{{$medical->sang}}"/>
+                                                    <div>
                                                         <strong>Autres</strong>
                                                     </div>
-                                                    <textarea name="autres" id="autres" cols="50 " rows="5" value="{{$medical->autres}}"></textarea>
+                                                    <textarea name="autre" id="autre" cols="50 " value="" rows="5">{{$medical->autre}}</textarea>
 
                                                 </li><br>
-                                                <div class="clinique ">
+                                                <li class="clinique ">
                                                     <strong>Electrocardiogramme :</strong>
-                                                </div>
-                                                <textarea name="electrocardiogramme" id="electrocardiogramme" cols="50 " rows="2 "value="{{$medical->electrocardiogramme}}"></textarea>
-                                                <div class="clinique ">
+                                                </li>
+                                                <textarea name="electrocardiogramme" id="electrocardiogramme" value="" cols="50 " rows="2 ">{{$medical->electrocardiogramme}}</textarea>
+                                                <li class="clinique ">
                                                     <strong>Audiométrie :</strong>
-                                                </div>
-                                                <textarea name="audiometrie" id="audiometrie" cols="50 " rows="2 " value="{{$medical->audiometrie}}"></textarea>
-                                                <div class="clinique ">
+                                                </li>
+                                                <textarea name="audiometrie" id="audiometrie" value="" cols="50 "  rows="2 ">{{$medical->audiometrie}}</textarea>
+                                                <li class="clinique ">
                                                     <strong>Spirométrie :</strong>
-                                                </div>
-                                                <textarea name="spirometrie" id="spirometrie" cols="50 " rows="2 " value="{{$medical->spirometrie}}"></textarea>
+                                                </li>
+                                                <textarea name="spirometrie" id="spirometrie" value="" cols="50 " rows="2 ">{{$medical->spirometrie}}</textarea>
                                             </ul>
                                         </div>
                                         <br>
                                     </div>
                                     <div class="clinique "><strong>III- Conduite à tenir</strong><br>
-                                        <textarea name="conduite_a_tenir" id="conduite_a_tenir" cols="50"
-                                            rows="2" value="{{$medical->conduite_a_tenir}}"></textarea><br><br>
+                                        <textarea name="conduite_a_tenir" id="conduite_a_tenir" value="" cols="50"
+                                            rows="2">{{$medical->conduite_a_tenir}}</textarea><br><br>
 
                                     </div><br>
                                     <div class="clinique "><strong> Ordonnance médicale :</strong></div><br>
-                                    <textarea name="ordonnance" id="ordonnance" cols="50 " rows="2" value="{{$medical->ordonnance}}"></textarea><br><br>
+                                    <textarea name="ordonnance" id="ordonnance" cols="50 " value=""  rows="2">{{$medical->ordonnance}}</textarea><br><br>
 
 
                                     <div class="clinique "><strong>IV- Aptitude</strong><br>
-                                        <textarea name="aptitude" id="aptitude" cols="50 " rows="2" value="{{$medical->aptitude}}"></textarea><br><br>
+                                        <textarea name="aptitude" id="aptitude" cols="50" value="" rows="2">{{$medical->aptitude}}</textarea><br><br>
                                     </div>
                                 </div>
 
@@ -216,11 +211,6 @@
                                     class="btn btn-primary">Enregistrer</button>
                             </form>
                         </div>
-
-
-
-
-
 
                     </div>
                 </div>
